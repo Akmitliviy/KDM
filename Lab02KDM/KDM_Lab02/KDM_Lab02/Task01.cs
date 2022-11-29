@@ -2,40 +2,39 @@
 {
     static class Task01
     {
-
         public static void FirstTask()
         {
 
-            //Console.ForegroundColor = ConsoleColor.Blue;
-            //Console.WriteLine("\nEnter first matrix: \n");
-            //Console.ForegroundColor = ConsoleColor.Gray;
-            //int[,] myMatrix = GetMatrix();
-            int[,] myMatrix =
-            {
-                {0, 1, 0, 0, 0, 0, 1, 1 },
-                {1, 0, 1, 1, 0, 0, 0, 0 },
-                {0, 1, 0, 1, 1, 0, 1, 0 },
-                {0, 1, 1, 0, 1, 0, 0, 0 },
-                {0, 0, 1, 1, 0, 1, 0, 0 },
-                {0, 0, 0, 0, 1, 0, 1, 1 },
-                {1, 0, 1, 0, 0, 1, 0, 1 },
-                {1, 0, 0, 0, 0, 1, 1, 0 }
-            };
-            //Console.ForegroundColor = ConsoleColor.Blue;
-            //Console.WriteLine("Enter second matrix: \n");
-            //Console.ForegroundColor = ConsoleColor.Gray;
-            //int[,] secMatrix = GetMatrix();
+            Console.ForegroundColor = ConsoleColor.Blue;
+            Console.WriteLine("\nEnter first matrix: \n");
+            Console.ForegroundColor = ConsoleColor.Gray;
+            int[,] myMatrix = GetMatrix();
+            //int[,] myMatrix =
+            //{
+            //    {0, 1, 0, 0, 0, 0, 1, 1 },
+            //    {1, 0, 1, 1, 0, 0, 0, 0 },
+            //    {0, 1, 0, 1, 1, 0, 1, 0 },
+            //    {0, 1, 1, 0, 1, 0, 0, 0 },
+            //    {0, 0, 1, 1, 0, 1, 0, 0 },
+            //    {0, 0, 0, 0, 1, 0, 1, 1 },
+            //    {1, 0, 1, 0, 0, 1, 0, 1 },
+            //    {1, 0, 0, 0, 0, 1, 1, 0 }
+            //};
+            Console.ForegroundColor = ConsoleColor.Blue;
+            Console.WriteLine("Enter second matrix: \n");
+            Console.ForegroundColor = ConsoleColor.Gray;
+            int[,] secMatrix = GetMatrix();
 
-            int[,] secMatrix =
-            {
-                {0, 0, 1, 0, 1, 0, 1 },
-                {0, 0, 0, 1, 0, 1, 1 },
-                {1, 0, 0, 0, 1, 0, 1 },
-                {0, 1, 0, 0, 0, 1, 1 },
-                {1, 0, 1, 0, 0, 0, 1 },
-                {0, 1, 0, 1, 0, 0, 1 },
-                {1, 1, 1, 1, 1, 1, 0 }
-            };
+            //int[,] secMatrix =
+            //{
+            //    {0, 0, 1, 0, 1, 0, 1 },
+            //    {0, 0, 0, 1, 0, 1, 1 },
+            //    {1, 0, 0, 0, 1, 0, 1 },
+            //    {0, 1, 0, 0, 0, 1, 1 },
+            //    {1, 0, 1, 0, 0, 0, 1 },
+            //    {0, 1, 0, 1, 0, 0, 1 },
+            //    {1, 1, 1, 1, 1, 1, 0 }
+            //};
 
             int[,] myMatrixComplemence = FindComplemence(myMatrix);
             int[,] matrixesAssociation = FindGraphsUnion(myMatrix, secMatrix);
@@ -64,7 +63,6 @@
 
             Console.ForegroundColor = ConsoleColor.Gray;
         }
-
         static int[,] FindGraphsIntersection(int[,] myMatrix, int[,] secMatrix)
         {
             int myMtrxLength = myMatrix.GetLength(0);
@@ -97,7 +95,6 @@
 
             return result;
         }
-
         static int[,] FindGraphsUnion(int[,] myMatrix, int[,] secMatrix)
         {
             int myMtrxLength = myMatrix.GetLength(0);
@@ -141,7 +138,6 @@
 
             return result;
         }
-
         static int[,] FindComplemence(int[,] matrix)
         {
             int len = matrix.GetLength(0);
@@ -161,7 +157,6 @@
 
             return result;
         }
-
         static int[,] GetMatrix()
         {
             int size;

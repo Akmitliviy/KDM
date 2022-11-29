@@ -24,7 +24,6 @@
 
             Show(walk, value);
         }
-
         static int NearestNeighbour(int[,] myMatrix, int[] walk)
         {
             int minIndex = 0, realMinIndex = 0, min = 100, counter = 0;
@@ -63,7 +62,6 @@
 
             return counter;
         }
-
         static int[,] GetMatrix()
         {
             int size;
@@ -136,7 +134,7 @@
             Console.ForegroundColor = ConsoleColor.DarkYellow;
             for (int i = 0; i < walk.Length; i++)
             {
-                Console.Write(walk[i]);
+                Console.Write((char)(96 + walk[i]));
                 if (i != walk.Length - 1)
                     Console.Write(" - ");
             }

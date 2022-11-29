@@ -60,7 +60,6 @@
 
             Console.ForegroundColor = ConsoleColor.Gray;
         }
-
         static int[,] FindGraphsIntersection(int[,] myMatrix, int[,] secMatrix)
         {
             int myMtrxLength = myMatrix.GetLength(0);
@@ -92,7 +91,6 @@
 
             return result;
         }
-
         static int[,] FindGraphsUnion(int[,] myMatrix, int[,] secMatrix)
         {
             int myMtrxLength = myMatrix.GetLength(0);
@@ -134,7 +132,6 @@
 
             return result;
         }
-
         static int[,] FindComplemence(int[,] matrix)
         {
             int len = matrix.GetLength(0);
@@ -152,7 +149,6 @@
 
             return result;
         }
-
         static int[,] GetMatrix()
         {
             int size;
