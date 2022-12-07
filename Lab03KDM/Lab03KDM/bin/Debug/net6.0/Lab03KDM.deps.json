@@ -1,0 +1,23 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v6.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v6.0": {
+      "Lab03KDM/1.0.0": {
+        "runtime": {
+          "Lab03KDM.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "Lab03KDM/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}

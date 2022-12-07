@@ -1,0 +1,15 @@
+C:\Users\akmit\source\repos\KDM\Lab03KDM\Lab03KDM\bin\Debug\net6.0\Lab03KDM.exe
+C:\Users\akmit\source\repos\KDM\Lab03KDM\Lab03KDM\bin\Debug\net6.0\Lab03KDM.deps.json
+C:\Users\akmit\source\repos\KDM\Lab03KDM\Lab03KDM\bin\Debug\net6.0\Lab03KDM.runtimeconfig.json
+C:\Users\akmit\source\repos\KDM\Lab03KDM\Lab03KDM\bin\Debug\net6.0\Lab03KDM.dll
+C:\Users\akmit\source\repos\KDM\Lab03KDM\Lab03KDM\bin\Debug\net6.0\Lab03KDM.pdb
+C:\Users\akmit\source\repos\KDM\Lab03KDM\Lab03KDM\obj\Debug\net6.0\Lab03KDM.csproj.AssemblyReference.cache
+C:\Users\akmit\source\repos\KDM\Lab03KDM\Lab03KDM\obj\Debug\net6.0\Lab03KDM.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\akmit\source\repos\KDM\Lab03KDM\Lab03KDM\obj\Debug\net6.0\Lab03KDM.AssemblyInfoInputs.cache
+C:\Users\akmit\source\repos\KDM\Lab03KDM\Lab03KDM\obj\Debug\net6.0\Lab03KDM.AssemblyInfo.cs
+C:\Users\akmit\source\repos\KDM\Lab03KDM\Lab03KDM\obj\Debug\net6.0\Lab03KDM.csproj.CoreCompileInputs.cache
+C:\Users\akmit\source\repos\KDM\Lab03KDM\Lab03KDM\obj\Debug\net6.0\Lab03KDM.dll
+C:\Users\akmit\source\repos\KDM\Lab03KDM\Lab03KDM\obj\Debug\net6.0\refint\Lab03KDM.dll
+C:\Users\akmit\source\repos\KDM\Lab03KDM\Lab03KDM\obj\Debug\net6.0\Lab03KDM.pdb
+C:\Users\akmit\source\repos\KDM\Lab03KDM\Lab03KDM\obj\Debug\net6.0\Lab03KDM.genruntimeconfig.cache
+C:\Users\akmit\source\repos\KDM\Lab03KDM\Lab03KDM\obj\Debug\net6.0\ref\Lab03KDM.dll
