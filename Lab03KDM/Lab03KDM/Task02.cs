@@ -10,32 +10,32 @@ namespace KDM_Lab03
     {
         public static void SecondTask()
         {
-            int vNum;
+            int vNum = 12;
             int badCounter = 0;
             int EdgesIndex = 0;
-            while (true)
-            {
-                try
-                {
-                    Console.ForegroundColor = ConsoleColor.Blue;
-                    Console.Write("\nPlease, enter number of vertices: ");
-                    Console.ForegroundColor = ConsoleColor.Cyan;
-                    vNum = Convert.ToInt32(Console.ReadLine());
-                    Console.ForegroundColor = ConsoleColor.Gray;
+            //while (true)
+            //{
+            //    try
+            //    {
+            //        Console.ForegroundColor = ConsoleColor.Blue;
+            //        Console.Write("\nPlease, enter number of vertices: ");
+            //        Console.ForegroundColor = ConsoleColor.Cyan;
+            //        vNum = Convert.ToInt32(Console.ReadLine());
+            //        Console.ForegroundColor = ConsoleColor.Gray;
 
-                    break;
-                }
-                catch (FormatException)
-                {
-                    Console.ForegroundColor = ConsoleColor.Red;
-                    Console.WriteLine("\nPlease, enter numbers only!\n");
-                    Console.ForegroundColor = ConsoleColor.Gray;
-                }
-            }
+            //        break;
+            //    }
+            //    catch (FormatException)
+            //    {
+            //        Console.ForegroundColor = ConsoleColor.Red;
+            //        Console.WriteLine("\nPlease, enter numbers only!\n");
+            //        Console.ForegroundColor = ConsoleColor.Gray;
+            //    }
+            //}
 
             int[] v = new int[vNum];
-            int[] p = new int[vNum - 2];
-            //int[] p = { 2, 4, 5, 6, 4, 3, 3, 2, 5, 6 };
+            //int[] p = new int[vNum - 2];
+            int[] p = { 2, 4, 5, 6, 4, 3, 3, 2, 5, 6 };
             int[,] edges = new int[vNum - 1, 2];
 
             Console.WriteLine();
@@ -43,29 +43,29 @@ namespace KDM_Lab03
             {
                 v[i] = i + 1;
 
-                if (i < vNum - 2)
-                {
+                //if (i < vNum - 2)
+                //{
 
-                    while (true)
-                    {
-                        try
-                        {
-                            Console.ForegroundColor = ConsoleColor.Blue;
-                            Console.Write("\nPlease, enter {0} element of sequence: ", i + 1);
-                            Console.ForegroundColor = ConsoleColor.Cyan;
-                            p[i] = Convert.ToInt32(Console.ReadLine());
-                            Console.ForegroundColor = ConsoleColor.Gray;
+                //    while (true)
+                //    {
+                //        try
+                //        {
+                //            Console.ForegroundColor = ConsoleColor.Blue;
+                //            Console.Write("\nPlease, enter {0} element of sequence: ", i + 1);
+                //            Console.ForegroundColor = ConsoleColor.Cyan;
+                //            p[i] = Convert.ToInt32(Console.ReadLine());
+                //            Console.ForegroundColor = ConsoleColor.Gray;
 
-                            break;
-                        }
-                        catch (FormatException)
-                        {
-                            Console.ForegroundColor = ConsoleColor.Red;
-                            Console.WriteLine("\nPlease, enter numbers only!\n");
-                            Console.ForegroundColor = ConsoleColor.Gray;
-                        }
-                    }
-                }
+                //            break;
+                //        }
+                //        catch (FormatException)
+                //        {
+                //            Console.ForegroundColor = ConsoleColor.Red;
+                //            Console.WriteLine("\nPlease, enter numbers only!\n");
+                //            Console.ForegroundColor = ConsoleColor.Gray;
+                //        }
+                //    }
+                //}
             }
 
             while (vNum - 2 != 0)
@@ -98,7 +98,6 @@ namespace KDM_Lab03
             edges[EdgesIndex, 1] = v[1];
             ShowMatrix(edges);
         }
-
         static int[] MatchArray(int[] arr, int index)
         {
             int[] tempArr = new int [arr.Length - 1];
@@ -118,13 +117,18 @@ namespace KDM_Lab03
 
             for (int i = 0; i < matrix.GetLength(0); i++)
             {
+                if(i % 5 == 0)
+                    Console.WriteLine();
+                Console.Write("{");
                 for (int j = 0; j < 2; j++)
                 {
-                    Console.Write(matrix[i, j] + "    ");
+                    Console.Write((char)(96 + matrix[i, j]));
+                    if (j + 1 < 2)
+                        Console.Write("    ");
                 }
-                Console.WriteLine("\n");
+                Console.Write("}\t");
             }
-            Console.WriteLine("Number of edges is: {0}\nNumber of vertix is: {1}\n", matrix.GetLength(0), matrix.GetLength(0) + 1);
+            Console.WriteLine("\n\nEdges: {0}\nVertices: {1}\n", matrix.GetLength(0), matrix.GetLength(0) + 1);
             Console.ForegroundColor = ConsoleColor.Gray;
         }
     }

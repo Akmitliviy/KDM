@@ -256,19 +256,19 @@ namespace KDM_Lab03
 
             return result;
         }
-        static int[,] MatrixMultiplication(int[,] matrix, int[,] adjacencyMatrix)
+        static int[,] MatrixMultiplication(int[,] matrix_1, int[,] matrix_2)
         {
-            int[,] result = new int[matrix.GetLength(0), matrix.GetLength(0)];
+            int[,] result = new int[matrix_1.GetLength(0), matrix_1.GetLength(0)];
             int path = 0;
 
-            for (int i = 0; i < matrix.GetLength(0); i++)
+            for (int i = 0; i < matrix_1.GetLength(0); i++)
             {
-                for (int j = 0; j < matrix.GetLength(0); j++)
+                for (int j = 0; j < matrix_1.GetLength(0); j++)
                 {
-                    for (int k = 0; k < matrix.GetLength(0); k++)
-                        path += adjacencyMatrix[i, k] * matrix[k, j];
+                    for (int k = 0; k < matrix_1.GetLength(0); k++)
+                        path += matrix_1[i, k] * matrix_2[k, j];
 
-                    result[i, j] = path;
+                    result[i, j] = path != 0 ? 1 : 0;
                     path = 0;
                 }
             }

@@ -115,7 +115,7 @@ namespace KDM_Lab03
             int counter = 0;
             int[,] edges = new int[graph.GetLength(0) - 1, 2];
             int[,] vertices = new int[graph.GetLength(0), graph.GetLength(0)];
-            int[] verticesIndexes = new int[graph.GetLength(1)];
+            int[] verticesIndexes = new int[graph.GetLength(0)];
 
             for (int i = 0; i < graph.GetLength(0); i++)
                 for (int j = 0; j < graph.GetLength(0); j++)
@@ -207,13 +207,16 @@ namespace KDM_Lab03
 
             for (int i = 0; i < matrix.GetLength(0); i++)
             {
+                Console.Write("{");
                 for (int j = 0; j < 2; j++)
                 {
-                    Console.Write((char)(97 + matrix[i, j]) + "    ");
+                    Console.Write((char)(97 + matrix[i, j]));
+                    if(j + 1 < 2)
+                        Console.Write("    ");
                 }
-                Console.WriteLine("\n");
+                Console.Write("}\t");
             }
-            Console.WriteLine("Number of edges is: {0}\nNumber of vertix is: {1}\n", matrix.GetLength(0), matrix.GetLength(0) + 1);
+            Console.WriteLine("\n\nEdges: {0}\nVertices: {1}\n", matrix.GetLength(0), matrix.GetLength(0) + 1);
             Console.ForegroundColor = ConsoleColor.Gray;
         }
     }

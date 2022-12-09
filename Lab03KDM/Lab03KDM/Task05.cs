@@ -24,117 +24,98 @@ namespace KDM_Lab03
                 {1,  0,  0,  1}
             };
 
-            Console.WriteLine("Marix:\n");
+            //Console.WriteLine("Marix:\n");
             ShowMatrix(R1);
 
             int isReflective = IsReflective(R1);
             int isSymmetrical = IsSymmetrical(R1);
             int isTransitive = IsTransitive(R1);
+
+            Console.ForegroundColor = ConsoleColor.Yellow;
             switch (isReflective)
             {
                 case 0:
-                    Console.ForegroundColor = ConsoleColor.Yellow;
-                    Console.WriteLine("Relation is nor reflective neither irreflective");
-                    Console.ForegroundColor = ConsoleColor.Gray;
+                    Console.WriteLine("Relation is neither reflective nor irreflective");
                     break;
 
                 case -1:
-                    Console.ForegroundColor = ConsoleColor.Yellow;
                     Console.WriteLine("Relation is irreflective");
-                    Console.ForegroundColor = ConsoleColor.Gray;
                     break;
 
                 case 1:
-                    Console.ForegroundColor = ConsoleColor.Yellow;
                     Console.WriteLine("Relation is reflective");
-                    Console.ForegroundColor = ConsoleColor.Gray;
                     break;
 
                 default:
-                    Console.ForegroundColor = ConsoleColor.Yellow;
+
+                    Console.ForegroundColor = ConsoleColor.Red;
                     Console.WriteLine("Something went completely wrong :(");
-                    Console.ForegroundColor = ConsoleColor.Gray;
+                    Console.ForegroundColor = ConsoleColor.Yellow;
                     break;
             }
 
             switch (isSymmetrical)
             {
                 case 0:
-                    Console.ForegroundColor = ConsoleColor.Yellow;
-                    Console.WriteLine("Relation is nor symmetrical neither antisymmetrical");
-                    Console.ForegroundColor = ConsoleColor.Gray;
+                    Console.WriteLine("Relation is neither symmetrical nor antisymmetrical");
                     break;
 
                 case -1:
-                    Console.ForegroundColor = ConsoleColor.Yellow;
                     Console.WriteLine("Relation is antisymmetrical");
-                    Console.ForegroundColor = ConsoleColor.Gray;
                     break;
 
                 case 1:
-                    Console.ForegroundColor = ConsoleColor.Yellow;
                     Console.WriteLine("Relation is symmetrical");
-                    Console.ForegroundColor = ConsoleColor.Gray;
                     break;
                 case -2:
-                    Console.ForegroundColor = ConsoleColor.Yellow;
                     Console.WriteLine("Relation is asymmetrical");
-                    Console.ForegroundColor = ConsoleColor.Gray;
                     break;
 
                 default:
-                    Console.ForegroundColor = ConsoleColor.Yellow;
+                    Console.ForegroundColor = ConsoleColor.Red;
                     Console.WriteLine("Something went completely wrong :(");
-                    Console.ForegroundColor = ConsoleColor.Gray;
+                    Console.ForegroundColor = ConsoleColor.Yellow;
                     break;
             }
 
             switch (isTransitive)
             {
                 case 0:
-                    Console.ForegroundColor = ConsoleColor.Yellow;
-                    Console.WriteLine("Relation is nor transitive neither antitransitive");
-                    Console.ForegroundColor = ConsoleColor.Gray;
+                    Console.WriteLine("Relation is neither transitive nor antitransitive");
                     break;
 
                 case -1:
-                    Console.ForegroundColor = ConsoleColor.Yellow;
                     Console.WriteLine("Relation is antitransitive");
-                    Console.ForegroundColor = ConsoleColor.Gray;
                     break;
 
                 case 1:
-                    Console.ForegroundColor = ConsoleColor.Yellow;
                     Console.WriteLine("Relation is transitive");
-                    Console.ForegroundColor = ConsoleColor.Gray;
                     break;
 
                 default:
-                    Console.ForegroundColor = ConsoleColor.Yellow;
+                    Console.ForegroundColor = ConsoleColor.Red;
                     Console.WriteLine("Something went completely wrong :(");
-                    Console.ForegroundColor = ConsoleColor.Gray;
+                    Console.ForegroundColor = ConsoleColor.Yellow;
                     break;
+                    Console.ForegroundColor = ConsoleColor.Gray;
 
             }
+
+            Console.ForegroundColor = ConsoleColor.Yellow;
 
             if (isReflective == 1 && isSymmetrical == 1 && isTransitive == 1)
             {
-                Console.ForegroundColor = ConsoleColor.Yellow;
                 Console.WriteLine("\nThis is equivalence relation");
-                Console.ForegroundColor = ConsoleColor.Gray;
             }
             else if (isSymmetrical < -1 && isTransitive == 1)
             {
-                Console.ForegroundColor = ConsoleColor.Yellow;
                 Console.WriteLine("\nThis is order relation");
-                Console.ForegroundColor = ConsoleColor.Gray;
             }
             else if (isReflective == 1 && isSymmetrical == 1 && isTransitive == -1)
             {
-                Console.ForegroundColor = ConsoleColor.Yellow;
                 Console.WriteLine("\nThis is tolerance relation");
-                Console.ForegroundColor = ConsoleColor.Gray;
             }
+            Console.ForegroundColor = ConsoleColor.Gray;
         }
         static int[,] GetMatrix()
         {
@@ -173,7 +154,6 @@ namespace KDM_Lab03
             {
                 for (int j = 0; j < size; j++)
                 {
-
                     while (true)
                     {
                         Console.ForegroundColor = ConsoleColor.Blue;
@@ -209,7 +189,6 @@ namespace KDM_Lab03
         }
         static void ShowMatrix(int[,] matrix)
         {
-            int edges = 0, vertices = matrix.GetLength(0); 
             Console.WriteLine();
             Console.ForegroundColor = ConsoleColor.DarkYellow;
 
@@ -217,13 +196,10 @@ namespace KDM_Lab03
             {
                 for (int j = 0; j < matrix.GetLength(0); j++)
                 {
-                    if(matrix[i, j] != 0)
-                        edges++;
                     Console.Write(matrix[i, j] + "    ");
                 }
                 Console.WriteLine("\n");
             }
-            Console.WriteLine("Number of edges is: {0}\nNumber of vertix is: {1}\n", edges, vertices);
             Console.ForegroundColor = ConsoleColor.Gray;
         }
         static int IsReflective(int[,] matrix)
@@ -276,36 +252,34 @@ namespace KDM_Lab03
             else
                 result = 0;
             return result;
-
-
         }
         static int IsTransitive(int[,] matrix)
         {
-            int transitivity = 0, ones = 0, result;
+            int transitivity = 1, ones = 1, result;
 
             for (int i = 0; i < matrix.GetLength(0); i++)
             {
                 for (int j = 0; j < matrix.GetLength(0); j++)
                 {
-                    ones++;
-
-                    if (j < i)
-                        continue;
-
                     if (matrix[i, j] != 0)
                     {
                         for (int k = 0; k < matrix.GetLength(0); k++)
                         {
-                            if (matrix[j, k] != 0 && matrix[i, k] != 0)
-                                transitivity++;
+                            if (matrix[j, k] != 0)
+                            {
+                                ones--;
+
+                                if(matrix[i, k] == 0)
+                                    transitivity--;
+                            }
                         }
                     }
                 }
             }
 
-            if (transitivity == ones)
+            if (transitivity == 1)
                 result = 1;
-            else if (transitivity == 0)
+            else if (transitivity == ones)
                 result = -1;
             else
                 result = 0;
