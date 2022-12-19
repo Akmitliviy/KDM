@@ -16,11 +16,17 @@ namespace KDM_Lab03
             //int[,] graph = GetMatrix();
             int[,] graph =
             {
-                {0,  1,  2,  8, 5},
-                {1,  0,  3, -1, 4},
-                {2,  3,  0,  1, 5},
-                {8, -1,  1,  0, 3},
-                {5,  4,  5,  3, 0}
+                {0, 7, 2, 1, 0, 0, 0, 0, 0, 0, 0},
+                {0, 0, 0, 0, 2, 0, 1, 0, 0, 0, 0},
+                {0, 0, 0, 0, 7, 4, 0, 0, 0, 0, 0},
+                {0, 0, 0, 0, 0, 3, 5, 0, 0, 0, 0},
+                {0, 0, 0, 0, 0, 0, 0, 4, 5, 0, 0},
+                {0, 0, 0, 0, 0, 0, 0, 6, 0, 2, 0},
+                {0, 0, 0, 0, 0, 0, 0, 0, 3, 3, 0},
+                {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 7},
+                {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 4},
+                {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 4},
+                {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
             };
             //int[,] graph =
             //{
@@ -113,6 +119,7 @@ namespace KDM_Lab03
             int iIn = 0, jIn = 0;
             int indexK1 = -1, indexK2 = -1;
             int counter = 0;
+            int value = 0;
             int[,] edges = new int[graph.GetLength(0) - 1, 2];
             int[,] vertices = new int[graph.GetLength(0), graph.GetLength(0)];
             int[] verticesIndexes = new int[graph.GetLength(0)];
@@ -160,6 +167,7 @@ namespace KDM_Lab03
                 {
                     edges[s, 0] = iIn;
                     edges[s, 1] = jIn;
+                    value += graph[iIn, jIn];
 
                     if (indexK1 == -1)
                     {
@@ -198,6 +206,7 @@ namespace KDM_Lab03
                 graph[iIn, jIn] = int.MaxValue;
                 min = int.MaxValue;
             }
+            Console.WriteLine(value);
             return edges;
         }
         static void ShowMatrix(int[,] matrix)

@@ -18,10 +18,10 @@ namespace KDM_Lab03
 
             int[,] R1 =
             {
-                {1,  1,  1,  1},
-                {1,  1,  0,  0},
-                {1,  0,  1,  0},
-                {1,  0,  0,  1}
+                {1, 1, 1, 1},
+                {1, 1, 0, 0},
+                {1, 0, 1, 0},
+                {1, 0, 0, 1}
             };
 
             //Console.WriteLine("Marix:\n");
@@ -104,17 +104,14 @@ namespace KDM_Lab03
             Console.ForegroundColor = ConsoleColor.Yellow;
 
             if (isReflective == 1 && isSymmetrical == 1 && isTransitive == 1)
-            {
                 Console.WriteLine("\nThis is equivalence relation");
-            }
-            else if (isSymmetrical < -1 && isTransitive == 1)
-            {
+
+            else if (isSymmetrical <= -1 && isTransitive == 1)
                 Console.WriteLine("\nThis is order relation");
-            }
+
             else if (isReflective == 1 && isSymmetrical == 1 && isTransitive == -1)
-            {
                 Console.WriteLine("\nThis is tolerance relation");
-            }
+
             Console.ForegroundColor = ConsoleColor.Gray;
         }
         static int[,] GetMatrix()
